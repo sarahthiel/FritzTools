@@ -27,6 +27,7 @@ $/ = "\012";
 open(EXPORT, $ARGV[0]) or die "$!";
 while(defined($_ = <EXPORT>)) {
   s/\015?\012$/\n/;
+  s/\\\\/\\/g;
   if ($type == 0) {
 reinterprete:
     my $file;
